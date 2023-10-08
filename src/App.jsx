@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import TodoTable from './components/TodoTable';
 import TodoList from './components/TodoList';
+import TodoGrid from './components/TodoGrid';
 
 function App() {
 
@@ -26,7 +27,8 @@ function App() {
         <TodoList onSubmit={addTodo} />
       </div>
       <div className='todotable'>
-        <TodoTable todos={todos} onDelete={handleDelete} />
+        <TodoGrid todos={todos} handleDelete={handleDelete} />
+        {/*<TodoTable todos={todos} onDelete={handleDelete} />*/}
       </div>
     </>
   )

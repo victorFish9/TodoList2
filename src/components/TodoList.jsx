@@ -23,9 +23,9 @@ export default function TodoList(props) {
             <h1>TodoList</h1>
             <form onSubmit={handleSubmit}>
                 <label>Description:</label>
-                <input type='text' value={desc.desctiption} onChange={inputDescription} required />
+                <input type='text' value={desc.desctiption} onChange={inputDescription} required name="Description" />
                 <label>Date:</label>
-                <input type='date' value={desc.date} onChange={inputDate} required />
+                <input type='date' value={desc.date} onChange={inputDate} required name="Date" />
                 <input type='submit' value="add" />
             </form>
         </div>
