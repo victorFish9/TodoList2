@@ -37,11 +37,11 @@ export default function TodoGrid(props) {
 
     return (
         <div>
-            <h3>TodoGrid is work</h3>
+
             <button onClick={deleteSelect}>Delete</button>
             <div className="ag-theme-material" style={{ height: '700px', width: '70%', margin: 'auto' }}>
                 <AgGridReact rowData={props.todos} columnDefs={c}
-                    rowSelection="single" onGridReady={params => gridRef.current = params.api} gridOptions={gridOptions}>
+                    rowSelection="single" ref={gridRef} onGridReady={params => gridRef.current = params.api} gridOptions={gridOptions}>
 
 
                 </AgGridReact>

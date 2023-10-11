@@ -23,7 +23,7 @@ function App() {
   return (
 
     <>
-      <div>
+      <div className="form_list" >
         <TodoList onSubmit={addTodo} />
       </div>
       <div className='todotable'>

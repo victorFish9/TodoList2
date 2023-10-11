@@ -1,3 +1,8 @@
+.form_list input,
+label {
+  margin: 5px;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

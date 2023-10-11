@@ -25,12 +25,12 @@ export default function TodoList(props) {
     return (
         <div>
             <h1>TodoList</h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} >
                 <label>Description:</label>
                 <input type='text' value={desc.desctiption} onChange={inputDescription} required name="Description" />
                 <label>Date:</label>
                 <input type='date' value={desc.date} onChange={inputDate} required name="Date" />
-                <label>Priority</label>
+                <label>Priority: </label>
                 <input type="text" value={desc.priority} onChange={inputPriority} required name="Priority" />
                 <input type='submit' value="add" />
             </form>
