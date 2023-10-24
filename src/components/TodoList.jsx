@@ -1,8 +1,12 @@
 import { useState } from "react";
+import { Button, TextField, Stack } from '@mui/material'
+import TodoGrid from "./TodoGrid";
+
 
 export default function TodoList(props) {
 
     const [desc, setDesc] = useState({ desctiption: "", date: "", priority: "" });
+    const [todos, setTodos] = useState([]);
 
     const inputDescription = (event) => {
         setDesc({ ...desc, desctiption: event.target.value });
@@ -18,8 +22,12 @@ export default function TodoList(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.onSubmit(desc);
+        setTodos([...todos, desc])
         setDesc({ desctiption: "", date: "", priority: "" })
+    }
+    const handleDelete = (index) => {
+        const updatedList = todos.filter((_, i) => i !== index);
+        setTodos(updatedList);
     }
 
     return (
@@ -34,6 +42,7 @@ export default function TodoList(props) {
                 <input type="text" value={desc.priority} onChange={inputPriority} required name="Priority" />
                 <input type='submit' value="add" />
             </form>
+            <TodoGrid todos={todos} handleDelete={handleDelete} />
         </div>
     )
 }
